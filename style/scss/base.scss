@@ -1,10 +1,11 @@
 /*! @theme base */
+
 /*! @import 'default'; */
 
 :root {
   --main-theme: white;
   --background-theme: #003566;
-  --background-code: rgb(255, 229, 193);
+  --background-code: rgb(255 229 193);
   --black: #212121;
   --h1-font-size: 50px;
   --h2-font-size: 45px;
@@ -17,101 +18,120 @@
   --font-weight-bold: 700;
   --normal-border-radius: 5px;
 }
+
 header {
-  color: white;
   width: 100%;
-  font-size: var(--header-footer-font-size);
   padding: 2px 40px 20px;
+  font-size: var(--header-footer-font-size);
+  color: white;
+
   &::before {
-    content: '';
+    display: inline-block;
     width: 10px;
     height: 50px;
-    display: inline-block;
-    background-color: white;
     margin-right: 16px;
     margin-bottom: -2px;
+    content: '';
+    background-color: white;
   }
 }
 
 footer {
   width: 100%;
-  color: white;
-  text-align: left;
+  height: 50px;
   padding-bottom: 0;
   font-size: var(--header-footer-font-size);
-  height: 50px;
+  color: white;
+  text-align: left;
 }
+
 section {
-  padding: 60px 40px 10px 40px;
-  background-color: var(--background-theme);
+  padding: 60px 40px 10px;
   font-size: var(--main-font-size);
   font-weight: var(--font-weight-normal);
   color: var(--black);
+  background-color: var(--background-theme);
+
   h1 {
-    color: white;
-    font-size: var(--h1-font-size);
     /* border-bottom: 2px solid var(--black); */
     padding-bottom: 10px;
+    font-size: var(--h1-font-size);
+    color: white;
   }
+
   h2 {
     font-size: var(--h2-font-size);
     font-weight: var(--font-weight-normal);
   }
+
   h3 {
     font-size: var(--h3-font-size);
     font-weight: var(--font-weight-normal);
   }
+
   h4 {
     font-size: var(--h4-font-size);
     font-weight: var(--font-weight-normal);
   }
+
   p img {
     display: block;
     margin: 0 auto;
     border-radius: var(--normal-border-radius);
   }
+
   pre {
     background-color: var(--background-theme);
-    border-radius: var(--normal-border-radius);
     border: var(--black) 1px solid;
+    border-radius: var(--normal-border-radius);
   }
+
   code {
+    padding: 4px 8px;
     color: var(--black);
     background-color: var(--background-code);
-    padding: 4px 8px 4px;
     border-radius: 4px;
+
     &.language-txt {
       color: var(--black);
     }
   }
+
   ul,
   ol {
     padding-left: 40px;
   }
+
   .d-flex {
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
   }
+
   .justify-center {
     justify-content: center;
   }
+
   .align-center {
     align-items: center;
   }
+
   $vertical-align: top, middle, bottom, baseline, revert, sub, super, text-top,
     text-bottom, inherit, initial, unset;
+
   @each $i in $vertical-align {
     .vertical-#{$i} {
       vertical-align: $i !important;
     }
   }
+
   $transition: ease, ease-out, ease-in, ease-in-out;
   $transition-time: (
     'short': 0.18s,
     'medium': 0.3s,
     'long': 0.4s
   );
+
   @each $i in $transition {
     @each $k, $v in $transition-time {
       .transition-#{$k}-#{$i} {
@@ -119,29 +139,37 @@ section {
       }
     }
   }
+
   $box-sizing: border-box, content-box, inherit, initial, revert, unset;
+
   @each $i in $box-sizing {
     .box-sizing-#{$i} {
       box-sizing: $i;
     }
   }
+
   $pointer-events: all, auto, bounding-box, fill, painted, stroke, visible,
     visiblefill, visiblepainted, visiblestroke, none, inherit, initial, revert,
     unset;
+
   @each $i in $pointer-events {
     .pointer-events-#{$i} {
       pointer-events: $i;
     }
   }
+
   $cursor: alias, all-scroll, cell, copy, context-menu, crosshair, default, grab,
     grabbing, help, move, no-drop, not-allowed, progress, wait, pointer, text,
     vertical-text, zoom-in, zoom-out, unset;
+
   @each $i in $cursor {
     .cursor-#{$i} {
       cursor: $i;
     }
   }
+
   $word-break: break-word, break-all, keep-all, normal, unset;
+
   @each $i in $word-break {
     @if $i == break-word {
       .word-break {
@@ -157,25 +185,32 @@ section {
       }
     }
   }
+
   $white-space: wrap, nowrap, break-spaces, normal, pre, pre-line, pre-wrap,
     unset;
+
   @each $i in $white-space {
     .white-space-#{$i} {
       white-space: $i;
     }
   }
+
   $text-overflow: ellipsis, clip, unset;
+
   @each $i in $text-overflow {
     .text-overflow-#{$i} {
       text-overflow: $i;
     }
   }
+
   $mix-blend-mode: normal, luminosity, screen, unset;
+
   @each $i in $mix-blend-mode {
     .mix-blend-#{$i} {
       mix-blend-mode: $i;
     }
   }
+
   $line-height: (
     'xs': 1,
     'sm': 1.15,
@@ -183,13 +218,16 @@ section {
     'lg': 1.5,
     'xl': 1.8
   );
+
   @each $k, $v in $line-height {
     .line-height-#{$k} {
       line-height: $v !important;
     }
   }
+
   $border-style: none, hidden, dotted, dashed, solid, double, groove, ridge,
     inset, outset;
+
   @each $i in $border-style {
     .border-#{$i} {
       border-style: $i;
@@ -207,6 +245,7 @@ section {
       border-bottom-style: $i;
     }
   }
+
   @for $i from 0 through 10 {
     .border-width-#{$i} {
       border-width: 1px * $i !important;
@@ -218,8 +257,8 @@ section {
       opacity: 0.1 * $i !important;
     }
     .line-clamp-#{$i} {
-      overflow: hidden;
       display: -webkit-box;
+      overflow: hidden;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: $i;
     }
@@ -228,6 +267,7 @@ section {
       flex-shrink: $i !important;
     }
   }
+
   @for $i from 0 through 100 {
     .line-height-#{$i} {
       line-height: $i * 1px !important;
@@ -242,6 +282,7 @@ section {
       height: $i * 1% !important;
     }
   }
+
   @for $i from 0 through 200 {
     .top-#{$i} {
       top: $i * 1px;
@@ -274,6 +315,7 @@ section {
       letter-spacing: $i * 0.1px !important;
     }
   }
+
   @for $i from 0 through 300 {
     .height-#{$i} {
       height: $i * 1px !important;
@@ -294,19 +336,23 @@ section {
       max-width: $i * 1px !important;
     }
   }
+
   $vertical-align: top, middle, bottom, baseline, revert, sub, super, text-top,
     text-bottom, inherit, initial, unset;
+
   @each $i in $vertical-align {
     .vertical-#{$i} {
       vertical-align: $i !important;
     }
   }
+
   $transition: ease, ease-out, ease-in, ease-in-out;
   $transition-time: (
     'short': 0.18s,
     'medium': 0.3s,
     'long': 0.4s
   );
+
   @each $i in $transition {
     @each $k, $v in $transition-time {
       .transition-#{$k}-#{$i} {
@@ -314,29 +360,37 @@ section {
       }
     }
   }
+
   $box-sizing: border-box, content-box, inherit, initial, revert, unset;
+
   @each $i in $box-sizing {
     .box-sizing-#{$i} {
       box-sizing: $i;
     }
   }
+
   $pointer-events: all, auto, bounding-box, fill, painted, stroke, visible,
     visiblefill, visiblepainted, visiblestroke, none, inherit, initial, revert,
     unset;
+
   @each $i in $pointer-events {
     .pointer-events-#{$i} {
       pointer-events: $i;
     }
   }
+
   $cursor: alias, all-scroll, cell, copy, context-menu, crosshair, default, grab,
     grabbing, help, move, no-drop, not-allowed, progress, wait, pointer, text,
     vertical-text, zoom-in, zoom-out, unset;
+
   @each $i in $cursor {
     .cursor-#{$i} {
       cursor: $i;
     }
   }
+
   $word-break: break-word, break-all, keep-all, normal, unset;
+
   @each $i in $word-break {
     @if $i == break-word {
       .word-break {
@@ -352,25 +406,32 @@ section {
       }
     }
   }
+
   $white-space: wrap, nowrap, break-spaces, normal, pre, pre-line, pre-wrap,
     unset;
+
   @each $i in $white-space {
     .white-space-#{$i} {
       white-space: $i;
     }
   }
+
   $text-overflow: ellipsis, clip, unset;
+
   @each $i in $text-overflow {
     .text-overflow-#{$i} {
       text-overflow: $i;
     }
   }
+
   $mix-blend-mode: normal, luminosity, screen, unset;
+
   @each $i in $mix-blend-mode {
     .mix-blend-#{$i} {
       mix-blend-mode: $i;
     }
   }
+
   $line-height: (
     'xs': 1,
     'sm': 1.15,
@@ -378,13 +439,16 @@ section {
     'lg': 1.5,
     'xl': 1.8
   );
+
   @each $k, $v in $line-height {
     .line-height-#{$k} {
       line-height: $v !important;
     }
   }
+
   $border-style: none, hidden, dotted, dashed, solid, double, groove, ridge,
     inset, outset;
+
   @each $i in $border-style {
     .border-#{$i} {
       border-style: $i;
@@ -402,6 +466,7 @@ section {
       border-bottom-style: $i;
     }
   }
+
   @for $i from 0 through 10 {
     .border-width-#{$i} {
       border-width: 1px * $i !important;
@@ -413,8 +478,8 @@ section {
       opacity: 0.1 * $i !important;
     }
     .line-clamp-#{$i} {
-      overflow: hidden;
       display: -webkit-box;
+      overflow: hidden;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: $i;
     }
@@ -423,6 +488,7 @@ section {
       flex-shrink: $i !important;
     }
   }
+
   @for $i from 0 through 100 {
     .line-height-#{$i} {
       line-height: $i * 1px !important;
@@ -437,6 +503,7 @@ section {
       height: $i * 1% !important;
     }
   }
+
   @for $i from 0 through 200 {
     .top-#{$i} {
       top: $i * 1px;
@@ -469,6 +536,7 @@ section {
       letter-spacing: $i * 0.1px !important;
     }
   }
+
   @for $i from 0 through 300 {
     .height-#{$i} {
       height: $i * 1px !important;
