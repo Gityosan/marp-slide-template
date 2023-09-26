@@ -1,0 +1,6 @@
+node_modules
+images
+pdf
+.DS_Store
+
+yarn.lock

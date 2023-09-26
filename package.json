@@ -1,0 +1,30 @@
+{
+  "name": "slide",
+  "version": "1.0.0",
+  "author": "Gityosan <ymo6190@docomo.ne.jp>",
+  "license": "MIT",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "new": "sed -e \"s/: \\(.*\\)#\\(.*\\)/: \\1/\" markdown/sample_slides.md > markdown/$(uuidgen | cut -c1-2,25-36 | tr '[:upper:]' '[:lower:]').md",
+    "pdf": "sh -c 'file=\"$1\" && title=$(sed -n \"s/title: \\(.*\\)/\\1/p\" \"$file\" | sed -n \"s/^.//p\" | sed -n \"s/.$//p\") && marp \"$file\" -o \"pdf/$title.pdf\" --allow-local-files' --",
+    "dev": "npx marp -s ./markdown --theme-set ./style/css/*.css",
+    "css": "yarn run scss && yarn run postcss && yarn run activate-theme",
+    "scss": "sass style/scss/:style/css/ --no-source-map",
+    "postcss": "postcss style/css/ -r --no-map",
+    "activate-theme": "find ./style/css -type f -name \"*.css\" | xargs -I{} sed -i \"\" \"s,\\/\\*.*@import\\(.*\\)\\*\\/,@import\\1,\" {}"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.2.1",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.30",
+    "postcss-cli": "^10.1.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.68.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-standard-scss": "^11.0.0"
+  },
+  "dependencies": {}
+}
