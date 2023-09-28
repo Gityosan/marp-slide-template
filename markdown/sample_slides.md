@@ -1,7 +1,7 @@
 ---
 title: 'title'
 marp: true
-theme: 'default' # 公式配布のテーマ
+theme: 'base' # 公式配布のテーマ
 header: 'TITLE DATE' # ヘッダーの文字
 footer: 'Footer' # フッターの文字、注意事項など貼り付けても良いですね
 backgroundColor: white # 背景色
@@ -10,10 +10,42 @@ paginate: true # ページを下部に表示する
 size: 16:9 # 縦横比の設定をする、4:3か16:9が多い
 ---
 
-# 1page
+<!--
+_header: ''
+_footer: ''
+_class: d-flex align-center justify-center text-center
+-->
 
-content
+# Slide Title
 
-# 2page
+# Page1
 
-content
+## Page1
+
+### Page1
+
+#### Page1
+
+##### Page1
+
+###### Page1
+
+plain text
+
+# Page2
+
+> quote
+>
+> > double quote
+
+```javascript
+const aa = 0
+```
+
+`aaaa`
+
+- list item
+- list item
+
+1. list item
+1. list item
