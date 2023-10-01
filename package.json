@@ -6,7 +6,7 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "new": "sed -e \"s/: \\(.*\\)#\\(.*\\)/: \\1/\" markdown/sample_slides.md > markdown/$(uuidgen | cut -c1-2,25-36 | tr '[:upper:]' '[:lower:]').md",
+    "new": "sh -c 'sed -e \"s/: \\(.*\\)#\\(.*\\)/: \\1/\" markdown/sample_slides.md > markdown/$([ \"$1\" != \"\" ] && { echo \"$1\";true; } || { uuidgen | cut -c1-2,25-36 | tr \"[:upper:]\" \"[:lower:]\"; }).md' --",
     "pdf": "sh -c 'file=\"$1\" && title=$(sed -n \"s/title: \\(.*\\)/\\1/p\" \"$file\" | sed -n \"s/^.//p\" | sed -n \"s/.$//p\") && marp \"$file\" -o \"pdf/$title.pdf\" --allow-local-files' --",
     "pptx": "sh -c 'file=\"$1\" && title=$(sed -n \"s/title: \\(.*\\)/\\1/p\" \"$file\" | sed -n \"s/^.//p\" | sed -n \"s/.$//p\") && marp \"$file\" -o \"pptx/$title.pptx\" --allow-local-files' --",
     "dev": "npx marp -s ./markdown --theme-set ./style/css/*.css",
