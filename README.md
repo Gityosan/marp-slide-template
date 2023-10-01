@@ -2,11 +2,12 @@
 
 ### Getting Started
 
-1. add `stylelint prettier marp` extensions in vscode
+1. add `stylelint / prettier / marp` extensions in vscode
 2. Run `yarn install`
 
 #### If you want to make new markdown file
 
+- `yarn run new ${filename}`
 - `yarn run new`
 
 #### If you want to make markdown to pdf
