@@ -1,0 +1,31 @@
+/*! @theme thesis */
+
+/*! @import 'base'; */
+section {
+  > blockquote {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    max-width: 90%;
+    padding: 4px 12px 0;
+    font-size: 60%;
+    border-top: 0.1em dashed #555;
+    border-left: none;
+
+    blockquote {
+      display: none;
+    }
+  }
+
+  > blockquote::before {
+    content: '';
+  }
+
+  > blockquote::after {
+    content: '';
+  }
+
+  footer {
+    display: none;
+  }
+}

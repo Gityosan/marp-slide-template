@@ -13,7 +13,8 @@
   "stylelint.validate": ["scss", "less", "postcss"],
   "css.validate": false,
   "scss.validate": false,
+  "less.validate": false,
   "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
   "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
-  "markdown.marp.themes": ["./style/css/base.css"]
+  "markdown.marp.themes": ["./style/css/base.css", "./style/css/thesis.css"]
 }
