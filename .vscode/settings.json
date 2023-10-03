@@ -19,5 +19,14 @@
   "less.validate": false,
   "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
   "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
-  "markdown.marp.themes": ["./style/css/base.css", "./style/css/thesis.css"]
+  "markdown.marp.themes": [
+    "./style/css/base.css",
+    "./style/css/thesis.css",
+    "./style/css/blue.css",
+    "./style/css/navy_blue.css",
+    "./style/css/dark_blue.css",
+    "./style/css/green.css",
+    "./style/css/brown.css",
+    "./style/css/ice_grey.css"
+  ]
 }

@@ -1,13 +1,14 @@
 /*! @theme base */
 
 /*! @import 'default'; */
+@import '//fonts.googleapis.com/css?family=Roboto+Condensed&display=swap';
 
 :root {
   --main-color: #607d8b;
   --sub-color: #b0bec5;
   --accent-color: #78909c;
   --white: white;
-  --black: #212121;
+  --black: #333;
   --grey: #9e9e9e;
   --h1-color: var(--black);
   --h2-color: var(--black);
@@ -15,6 +16,7 @@
   --h4-color: var(--black);
   --h5-color: var(--black);
   --h6-color: var(--black);
+  --heading-strong-color: var(--black);
   --header-footer-color: var(--black);
   --text-color: var(--black);
   --background-theme: var(--white);
@@ -51,10 +53,10 @@ section {
 
     &::before {
       display: inline-block;
-      width: 8px;
-      height: 50px;
+      width: 4px;
+      height: 60px;
       margin-right: 16px;
-      margin-bottom: -2px;
+      margin-bottom: -4px;
       content: '';
       background-color: var(--text-color);
     }
@@ -67,6 +69,15 @@ section {
     line-height: 50px;
     color: var(--header-footer-color);
     text-align: right;
+  }
+
+  &::after {
+    position: absolute;
+    right: 20px;
+    bottom: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 28px;
+    color: var(--header-footer-color);
   }
 
   h1 {
@@ -138,6 +149,7 @@ section {
     padding: 2px 3px 1px;
     line-height: 1;
     color: #e01e5a;
+    background-color: var(--background-code);
     border: 1px solid var(--background-code-border);
     border-radius: 3px;
   }
@@ -145,11 +157,6 @@ section {
   ul,
   ol {
     padding-left: 40px;
-  }
-
-  &::after {
-    content: '' attr(data-marpit-pagination) ' / '
-      attr(data-marpit-pagination-total);
   }
 
   $colors: (
@@ -342,5 +349,58 @@ section {
     .box-sizing-#{$i} {
       box-sizing: $i;
     }
+  }
+
+  &.index-section {
+    ol {
+      counter-reset: number 0;
+
+      &::before {
+        display: block;
+        width: 100%;
+        min-width: 450px;
+        margin-bottom: 20px;
+        font-size: 36px;
+        content: '目次';
+        border-bottom: 2px solid white;
+      }
+
+      > li {
+        padding-left: 5px;
+        font-size: 36px;
+        line-height: 1.5;
+        list-style-type: none;
+
+        &::before {
+          margin-right: 20px;
+          font-family: 'Roboto Condensed', sans-serif;
+          color: var(--accent-color);
+          content: counter(number, decimal-leading-zero);
+          counter-increment: number 1;
+        }
+
+        ul {
+          margin-top: 10px;
+        }
+
+        li {
+          margin-left: 50px;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  &.invert {
+    --h1-color: var(--white);
+    --h2-color: var(--white);
+    --h3-color: var(--white);
+    --h4-color: var(--white);
+    --h5-color: var(--white);
+    --h6-color: var(--white);
+    --heading-strong-color: var(--white);
+    --header-footer-color: var(--white);
+    --text-color: var(--white);
+    --background-theme: var(--white);
   }
 }
