@@ -1,15 +1,15 @@
 {
   "name": "slide",
   "version": "1.0.0",
-  "author": "Gityosan <ymo6190@docomo.ne.jp>",
+  "author": "Gityosan",
   "license": "MIT",
   "private": "true",
   "type": "module",
   "scripts": {
-    "new": "sh -c 'sed -e \"s/: \\(.*\\)#\\(.*\\)/: \\1/\" markdown/sample_slides.md > markdown/$([ \"$1\" != \"\" ] && { echo \"$1\";true; } || { uuidgen | cut -c1-2,25-36 | tr \"[:upper:]\" \"[:lower:]\"; }).md' --",
-    "pdf": "sh -c 'file=\"$1\" && title=$(sed -n \"s/title: \\(.*\\)/\\1/p\" \"$file\" | sed -n \"s/^.//p\" | sed -n \"s/.$//p\") && marp \"$file\" -o \"pdf/$title.pdf\" --allow-local-files' --",
-    "pptx": "sh -c 'file=\"$1\" && title=$(sed -n \"s/title: \\(.*\\)/\\1/p\" \"$file\" | sed -n \"s/^.//p\" | sed -n \"s/.$//p\") && marp \"$file\" -o \"pptx/$title.pptx\" --allow-local-files' --",
-    "dev": "npx marp -s ./markdown --theme-set ./style/css/*.css",
+    "new": "sh -c 'sed -e \"s/: \\(.*\\)#\\(.*\\)/: \\1/\" markdown/template.md > markdown/$([ \"$1\" != \"\" ] && { echo \"$1\";true; } || { uuidgen | cut -c1-2,25-36 | tr \"[:upper:]\" \"[:lower:]\"; }).md' --",
+    "pdf": "sh -c 'file=\"$1\" && title=$(sed -n \"s/title: \\(.*\\)/\\1/p\" \"$file\" | sed -n \"s/^.//p\" | sed -n \"s/.$//p\") && marp \"$file\" -o \"pdf/$title.pdf\"' --",
+    "pptx": "sh -c 'file=\"$1\" && title=$(sed -n \"s/title: \\(.*\\)/\\1/p\" \"$file\" | sed -n \"s/^.//p\" | sed -n \"s/.$//p\") && marp \"$file\" -o \"pptx/$title.pptx\"' --",
+    "dev": "marp -s ./markdown --theme-set ./style/css/*.css",
     "css": "yarn run scss && yarn run postcss && yarn run activate-theme",
     "scss": "sass style/scss/:style/css/ --no-source-map",
     "postcss": "postcss style/css/ -r --no-map",
@@ -27,5 +27,9 @@
     "stylelint-config-recess-order": "^4.3.0",
     "stylelint-config-standard-scss": "^11.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "marp": {
+    "allowLocalFiles": true,
+    "themeSet": "./style/css"
+  }
 }
