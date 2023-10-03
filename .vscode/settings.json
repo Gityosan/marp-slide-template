@@ -7,6 +7,9 @@
     "source.fixAll.stylelint": true,
     "source.fixAll.eslint": true
   },
+  "[css]": {
+    "editor.formatOnSave": false
+  },
   "editor.guides.bracketPairs": true,
   "git.ignoreLimitWarning": true,
   "eslint.run": "onSave",
