@@ -1,7 +1,7 @@
 ---
 title: 'title'
 marp: true
-theme: 'base' # 公式配布のテーマ
+theme: 'default' # 公式配布のテーマ
 header: 'TITLE DATE' # ヘッダーの文字
 footer: '' # フッターの文字
 backgroundColor: white # 背景色
