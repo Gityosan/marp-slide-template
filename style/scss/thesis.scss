@@ -1,7 +1,12 @@
 /*! @theme thesis */
 
 /*! @import 'base'; */
+@import '//fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|BIZ+UDPGothic&display=swap';
+
 section {
+  font-family: 'BIZ UDPGothic', Arial, 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif;
+
   > blockquote {
     position: absolute;
     bottom: 20px;

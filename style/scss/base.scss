@@ -1,7 +1,6 @@
 /*! @theme base */
 
 /*! @import 'default'; */
-@import '//fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|BIZ+UDPGothic&display=swap';
 
 :root {
   --main-color: #607d8b;
@@ -36,8 +35,6 @@ section {
   width: 100dvh;
   height: 100dvh;
   padding: 0 40px;
-  font-family: 'BIZ UDPGothic', Arial, 'Hiragino Kaku Gothic ProN',
-    'Hiragino Sans', Meiryo, sans-serif;
   font-size: var(--main-font-size);
   font-weight: 400;
   color: var(--text-color);
@@ -47,7 +44,7 @@ section {
     position: absolute;
     top: 0;
     left: 40px;
-    width: 100dvh;
+    width: calc(100% - 80px);
     padding-bottom: 20px;
     font-size: var(--header-footer-font-size);
     color: var(--header-footer-color);
@@ -64,7 +61,7 @@ section {
   }
 
   footer {
-    width: 100dvh;
+    width: calc(100% - 80px);
     height: 50px;
     font-size: var(--header-footer-font-size);
     line-height: 50px;
@@ -73,34 +70,39 @@ section {
   }
 
   h1 {
-    /* border-bottom: 2px solid var(--black); */
-    padding-bottom: 10px;
     font-size: var(--h1-font-size);
+    font-weight: 700;
+    color: var(--h1-color);
   }
 
   h2 {
     font-size: var(--h2-font-size);
     font-weight: 400;
+    color: var(--h2-color);
   }
 
   h3 {
     font-size: var(--h3-font-size);
     font-weight: 400;
+    color: var(--h3-color);
   }
 
   h4 {
     font-size: var(--h4-font-size);
     font-weight: 400;
+    color: var(--h4-color);
   }
 
   h5 {
     font-size: var(--h5-font-size);
     font-weight: 400;
+    color: var(--h5-color);
   }
 
   h6 {
     font-size: var(--h6-font-size);
     font-weight: 400;
+    color: var(--h6-color);
   }
 
   p img {
@@ -150,13 +152,34 @@ section {
       attr(data-marpit-pagination-total);
   }
 
+  $colors: (
+    'main-color': var(--main-color),
+    'sub-color': var(--sub-color),
+    'accent-color': var(--accent-color),
+    'white': var(--white),
+    'black': var(--black),
+    'grey': var(--grey)
+  );
+
+  @each $name, $color in $colors {
+    &.text-#{$name},
+    .text-#{$name} {
+      color: $color !important;
+    }
+    &.bg-#{$name},
+    .bg-#{$name} {
+      background-color: $color !important;
+    }
+  }
+
   $display: block, inline, inline-block, inline-table, flex, contents, grid,
     ruby, list-item, none, inherit, table, table-caption, table-cell,
     table-column, table-column-group, table-footer-group, table-header-group,
     table-row, table-row-group;
 
   @each $i in $display {
-    &.d-#{$i} {
+    &.d-#{$i},
+    .d-#{$i} {
       display: $i;
     }
   }
@@ -166,7 +189,8 @@ section {
     unset;
 
   @each $i in $justify {
-    &.justify-#{$i} {
+    &.justify-#{$i},
+    .justify-#{$i} {
       justify-content: $i;
     }
   }
@@ -175,7 +199,8 @@ section {
     inherit, initial, revert, unset;
 
   @each $i in $align {
-    &.align-#{$i} {
+    &.align-#{$i},
+    .align-#{$i} {
       align-items: $i;
     }
   }
@@ -184,7 +209,8 @@ section {
     revert, unset;
 
   @each $i in $text-align {
-    &.text-#{$i} {
+    &.text-#{$i},
+    .text-#{$i} {
       text-align: $i;
     }
   }
@@ -193,15 +219,18 @@ section {
 
   @each $i in $word-break {
     @if $i == break-word {
-      &.word-break {
+      &.word-break,
+      .word-break {
         word-break: break-word;
       }
     } @else if $i == break-all {
-      &.word-break-all {
+      &.word-break-all,
+      .word-break-all {
         word-break: break-all;
       }
     } @else {
-      &.word-break-#{$i} {
+      &.word-break-#{$i},
+      .word-break-#{$i} {
         word-break: $i;
       }
     }
@@ -211,7 +240,8 @@ section {
     unset;
 
   @each $i in $white-space {
-    &.white-space-#{$i} {
+    &.white-space-#{$i},
+    .white-space-#{$i} {
       white-space: $i;
     }
   }
@@ -219,7 +249,8 @@ section {
   $text-overflow: ellipsis, clip, unset;
 
   @each $i in $text-overflow {
-    &.text-overflow-#{$i} {
+    &.text-overflow-#{$i},
+    .text-overflow-#{$i} {
       text-overflow: $i;
     }
   }
@@ -227,7 +258,8 @@ section {
   $mix-blend-mode: normal, luminosity, screen, unset;
 
   @each $i in $mix-blend-mode {
-    &.mix-blend-#{$i} {
+    &.mix-blend-#{$i},
+    .mix-blend-#{$i} {
       mix-blend-mode: $i;
     }
   }
@@ -241,42 +273,53 @@ section {
   );
 
   @each $k, $v in $line-height {
+    &.line-height-#{$k},
     .line-height-#{$k} {
       line-height: $v !important;
     }
   }
 
   @for $i from 0 through 100 {
+    &.w-#{$i},
     .w-#{$i} {
       width: $i * 1% !important;
     }
+    &.h-#{$i},
     .h-#{$i} {
       height: $i * 1% !important;
     }
   }
 
   @for $i from 0 through 200 {
+    &.top-#{$i},
     .top-#{$i} {
       top: $i * 1px;
     }
+    &.right-#{$i},
     .right-#{$i} {
       right: $i * 1px;
     }
+    &.left-#{$i},
     .left-#{$i} {
       left: $i * 1px;
     }
+    &.bottom-#{$i},
     .bottom-#{$i} {
       bottom: $i * 1px;
     }
+    &.top-n#{$i},
     .top-n#{$i} {
       top: $i * -1px;
     }
+    &.right-n#{$i},
     .right-n#{$i} {
       right: $i * -1px;
     }
+    &.left-n#{$i},
     .left-n#{$i} {
       left: $i * -1px;
     }
+    &.bottom-n#{$i},
     .bottom-n#{$i} {
       bottom: $i * -1px;
     }
@@ -286,6 +329,7 @@ section {
     text-bottom, inherit, initial, unset;
 
   @each $i in $vertical-align {
+    &.vertical-#{$i},
     .vertical-#{$i} {
       vertical-align: $i !important;
     }
@@ -294,6 +338,7 @@ section {
   $box-sizing: border-box, content-box, inherit, initial, revert, unset;
 
   @each $i in $box-sizing {
+    &.box-sizing-#{$i},
     .box-sizing-#{$i} {
       box-sizing: $i;
     }
