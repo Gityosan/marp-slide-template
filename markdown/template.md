@@ -1,7 +1,7 @@
 ---
-title: 'title'
 marp: true
-theme: 'default' # 公式配布のテーマ
+title: 'title'
+theme: 'base' # 公式配布のテーマはdefault/gaia/uncoverの三種
 header: 'TITLE DATE' # ヘッダーの文字
 footer: '' # フッターの文字
 backgroundColor: white # 背景色
