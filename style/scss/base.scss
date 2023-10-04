@@ -1,7 +1,7 @@
 /*! @theme base */
 
 /*! @import 'default'; */
-@import '//fonts.googleapis.com/css?family=Roboto+Condensed&display=swap';
+@import '//fonts.googleapis.com/css?family=Roboto+Condensed|BIZ+UDPGothic&display=swap';
 
 :root {
   --main-color: #607d8b;
@@ -363,6 +363,12 @@ section {
       line-height: 1.5;
       list-style-type: none;
 
+      strong {
+        display: inline-block;
+        margin-left: 12px;
+        font-weight: 400;
+      }
+
       li {
         font-size: 20px;
 
@@ -443,5 +449,37 @@ section {
     --header-footer-color: var(--white);
     --text-color: var(--white);
     --background-theme: var(--white);
+  }
+
+  &.thesis-footer {
+    font-family: 'BIZ UDPGothic', Arial, 'Hiragino Kaku Gothic ProN',
+      'Hiragino Sans', Meiryo, sans-serif;
+
+    > blockquote {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      max-width: 90%;
+      padding: 4px 12px 0;
+      font-size: 60%;
+      border-top: 0.1em dashed #555;
+      border-left: none;
+
+      blockquote {
+        display: none;
+      }
+    }
+
+    > blockquote::before {
+      content: '';
+    }
+
+    > blockquote::after {
+      content: '';
+    }
+
+    footer {
+      display: none;
+    }
   }
 }
