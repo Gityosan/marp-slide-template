@@ -1,14 +1,13 @@
 {
-  "name": "slide",
+  "name": "marp-slide-template",
   "version": "1.0.0",
   "author": "Gityosan",
   "license": "MIT",
-  "private": "true",
   "type": "module",
   "scripts": {
-    "new": "sh -c 'sed -e \"s/: \\(.*\\)#\\(.*\\)/: \\1/\" markdown/template.md > markdown/$([ \"$1\" != \"\" ] && { echo \"$1\";true; } || { uuidgen | cut -c1-2,25-36 | tr \"[:upper:]\" \"[:lower:]\"; }).md' --",
-    "pdf": "sh -c 'file=\"$1\" && title=$(sed -n \"s/title: \\(.*\\)/\\1/p\" \"$file\" | sed -n \"s/^.//p\" | sed -n \"s/.$//p\") && marp \"$file\" -o \"pdf/$title.pdf\"' --",
-    "pptx": "sh -c 'file=\"$1\" && title=$(sed -n \"s/title: \\(.*\\)/\\1/p\" \"$file\" | sed -n \"s/^.//p\" | sed -n \"s/.$//p\") && marp \"$file\" -o \"pptx/$title.pptx\"' --",
+    "new": "sh ./bin/new.sh",
+    "pdf": "sh ./bin/pdf.sh",
+    "pptx": "sh ./bin/pptx.sh",
     "dev": "marp -s ./markdown --theme-set ./style/css/*.css",
     "css": "yarn run scss && yarn run postcss && yarn run activate-theme",
     "scss": "sass style/scss/:style/css/ --no-source-map",
