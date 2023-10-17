@@ -191,6 +191,24 @@ section {
     }
   }
 
+  $flex-direction: row, column;
+
+  @each $i in $flex-direction {
+    &.flex-#{$i},
+    .flex-#{$i} {
+      flex-direction: $i;
+    }
+  }
+
+  $flex-wrap: wrap, no-wrap;
+
+  @each $i in $flex-wrap {
+    &.flex-#{$i},
+    .flex-#{$i} {
+      flex-wrap: $i;
+    }
+  }
+
   $justify: center, start, end, flex-start, flex-end, left, right, normal,
     space-between, space-around, space-evenly, stretch, inherit, initial, revert,
     unset;
