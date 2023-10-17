@@ -1,11 +1,5 @@
 #!/usr/bash
 
-# 引数の数をチェックし、引数が1つでない場合はエラーメッセージを出力して終了
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <file>"
-    exit 1
-fi
-
 # 入力ファイルと出力ファイルの指定
 input_file="markdown/template.md"
 
@@ -28,9 +22,7 @@ while IFS= read -r line; do
   elif [[ "$in_front_matter" = true ]]; then
     line=$(echo "$line" | sed 's/#[^"]*$//')
     if [[ "$line" =~ title ]]; then
-      echo "$line"
       line=$(echo "$line" | sed -e "s/title: .*/title: '$1'/")
-      echo "$line"
     fi
   fi
   echo "$line" >> "$output_file"

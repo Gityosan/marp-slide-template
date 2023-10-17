@@ -5,9 +5,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "new": "sh ./bin/new.sh",
-    "pdf": "sh ./bin/pdf.sh",
-    "pptx": "sh ./bin/pptx.sh",
+    "new": "bash ./bin/new.bash",
+    "pdf": "bash ./bin/pdf.bash",
+    "pptx": "bash ./bin/pptx.bash",
     "dev": "marp -s ./markdown --theme-set ./style/css/*.css",
     "css": "yarn run scss && yarn run postcss && yarn run activate-theme",
     "scss": "sass style/scss/:style/css/ --no-source-map",
