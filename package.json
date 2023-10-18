@@ -9,7 +9,7 @@
     "pdf": "bash ./bin/pdf.bash",
     "pptx": "bash ./bin/pptx.bash",
     "dev": "marp -s ./markdown --theme-set ./style/css/*.css",
-    "css": "yarn run scss && yarn run postcss && yarn run activate-theme",
+    "css": "npm run scss && npm run postcss && npm run activate-theme",
     "scss": "sass style/scss/:style/css/ --no-source-map",
     "postcss": "postcss style/css/ -r --no-map",
     "activate-theme": "find ./style/css -type f -name \"*.css\" | xargs -I{} sed -i \"\" \"s,\\/\\*.*@import\\(.*\\)\\*\\/,@import\\1,\" {}"
