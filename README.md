@@ -1,26 +1,33 @@
-## This repository is a template for slide creation.
+## This repository provides a template for slide creation.
 
 ### Getting Started
 
-1. Add `stylelint / prettier / marp` extensions in vscode
-2. Run `yarn install`
+1. Install the `stylelint`, `prettier`, and `marp` extensions in VSCode.
+2. Execute `yarn install`.
 
-#### If you want to make new markdown file
+### Instructions
 
-- `yarn run new ${filename}`<br>
-  or
-- `yarn run new`
+1.  To create a new markdown file:
 
-#### If you want to make markdown to pdf
+    - Use `yarn run new ${filename}`
+      or
+    - Simply run `yarn run new`.
 
-- `yarn run pdf ${relative path}`
+2.  To convert markdown to PDF:
 
-#### If you want to make markdown to pptx
+    - Use `yarn run pdf ${relative path}`.
 
-- `yarn run pptx ${relative path}`
+3.  To convert markdown to PPTX:
 
-#### If you want to edit theme
+    - Use `yarn run pptx ${relative path}`.
 
-1. you can edit `/style/scss/*.scss`
-2. then run `yarn run css`
-3. then fix `"markdown.marp.themes"` in `.vscode/settings.json`
+4.  To modify the theme:
+
+    1. Edit the files in `/style/scss/*.scss`.
+    2. Then, run `yarn run css`.
+    3. Afterwards, adjust the `"markdown.marp.themes"` value in `.vscode/settings.json`.
+
+5.  If you wish to use the DeepL API to translate the title before uploading to SlideShare:
+    1. Copy the example environment file with `cp .env.example .env`.
+    2. Set your `DEEPL_API_KEY` in the `.env` file.
+    3. Execute the `pdf/pptx` command using the `-d` option.
