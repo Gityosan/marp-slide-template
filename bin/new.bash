@@ -1,4 +1,4 @@
-#!/usr/bash
+#!/usr/bin/bash
 
 # 入力ファイルと出力ファイルの指定
 input_file="markdown/template.md"
