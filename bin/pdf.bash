@@ -1,22 +1,32 @@
 #!/usr/bin/bash
 
-# 引数の数をチェックし、引数が3つ以上場合はエラーメッセージを出力して終了
-if [ "$#" -ge 3 ]; then
-  echo "Usage: $0 <file_path> [-d]"
+# 引数の数をチェックし、引数が4つ以上場合はエラーメッセージを出力して終了
+if [ "$#" -ge 4 ]; then
+  echo "Usage: $0 <file_path> [-d] [--html]"
   echo "Argument count is not correct."
   exit 1
 fi
 
 # -d(deepL)オプションが指定されているかチェック
 d_option_set=false
+html_option_set=false
 while getopts ":d" opt; do
   case $opt in
-    d)
+    -d)
       d_option_set=true
+      shift
       ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
+    --html)
+      html_option_set=true
+      shift
+      ;;
+    *)
+      # 未知のオプションをチェック
+      if [[ $1 == -* ]]; then
+        echo "Invalid option: $1" >&2
+        exit 1
+      fi
+      break
       ;;
   esac
 done
@@ -62,4 +72,8 @@ if [ "$d_option_set" = true ]; then
   fi
 fi
 
-npx marp "$1" -o "pdf/$title.pdf" --allow-local-files
+if [ "$html_option_set" = true ]; then
+  npx marp "$1" -o "pdf/$title.pdf" --allow-local-files --html
+else
+  npx marp "$1" -o "pdf/$title.pdf" --allow-local-files
+fi
