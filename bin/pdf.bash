@@ -27,9 +27,6 @@ done
 
 shift $((OPTIND-1))
 
-echo $d_option_set
-echo $html_option_set
-
 # titleを抽出
 while IFS= read -r line; do
   if [[ $line =~ title:[[:space:]]*[\'\"]([^\'\"]+)[\'\"] ]]; then
