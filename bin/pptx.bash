@@ -2,34 +2,30 @@
 
 # 引数の数をチェックし、引数が4つ以上場合はエラーメッセージを出力して終了
 if [ "$#" -ge 4 ]; then
-  echo "Usage: $0 <file_path> [-d] [--html]"
+  echo "Usage: $0 [-d] [-h] <file_path>"
   echo "Argument count is not correct."
   exit 1
 fi
 
-# -d(deepL)オプションが指定されているかチェック
+# -d(deepL)と-h(html)オプションが指定されているかチェック
 d_option_set=false
 html_option_set=false
-while getopts ":d" opt; do
+while getopts ":dh" opt; do
   case $opt in
-    -d)
+    d)
       d_option_set=true
-      shift
       ;;
-    --html)
+    h)
       html_option_set=true
-      shift
       ;;
-    *)
-      # 未知のオプションをチェック
-      if [[ $1 == -* ]]; then
-        echo "Invalid option: $1" >&2
-        exit 1
-      fi
-      break
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
       ;;
   esac
 done
+
+shift $((OPTIND-1))
 
 while IFS= read -r line; do
   if [[ $line =~ title:[[:space:]]*[\'\"]([^\'\"]+)[\'\"] ]]; then
