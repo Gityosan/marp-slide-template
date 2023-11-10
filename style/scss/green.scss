@@ -18,3 +18,9 @@
   --text-color: var(--main-color);
   --header-footer-font-size: 24px;
 }
+
+section {
+  &.invert {
+    --background-theme: var(--main-color) !important;
+  }
+}
