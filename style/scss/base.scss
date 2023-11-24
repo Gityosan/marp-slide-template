@@ -159,6 +159,10 @@ section {
     padding-left: 40px;
   }
 
+  li {
+    font-size: var(--h5-font-size);
+  }
+
   $colors: (
     'main-color': var(--main-color),
     'sub-color': var(--sub-color),

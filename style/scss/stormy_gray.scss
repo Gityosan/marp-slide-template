@@ -1,0 +1,20 @@
+/*! @theme stormy_gray */
+
+/*! @import 'base'; */
+
+:root {
+  --main-color: #708090;
+  --sub-color: #70809080;
+  --accent-color: #ffd700;
+  --grey: #ede8e4;
+  --h1-color: var(--main-color);
+  --h2-color: var(--main-color);
+  --h3-color: var(--main-color);
+  --h4-color: var(--main-color);
+  --h5-color: var(--main-color);
+  --h6-color: var(--main-color);
+  --heading-strong-color: var(--main-color);
+  --header-footer-color: var(--main-color);
+  --text-color: var(--main-color);
+  --header-footer-font-size: 24px;
+}

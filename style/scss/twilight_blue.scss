@@ -1,0 +1,20 @@
+/*! @theme twilight_blue */
+
+/*! @import 'base'; */
+
+:root {
+  --main-color: #483d8b;
+  --sub-color: #483d8b80;
+  --accent-color: #f7581d;
+  --grey: #ede8e4;
+  --h1-color: var(--main-color);
+  --h2-color: var(--main-color);
+  --h3-color: var(--main-color);
+  --h4-color: var(--main-color);
+  --h5-color: var(--main-color);
+  --h6-color: var(--main-color);
+  --heading-strong-color: var(--main-color);
+  --header-footer-color: var(--main-color);
+  --text-color: var(--main-color);
+  --header-footer-font-size: 24px;
+}

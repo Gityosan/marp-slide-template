@@ -27,6 +27,9 @@
     "./style/css/dark_blue.css",
     "./style/css/green.css",
     "./style/css/brown.css",
-    "./style/css/ice_grey.css"
+    "./style/css/ice_grey.css",
+    "./style/css/twilight_blue.css",
+    "./style/css/stormy_gray.css",
+    "./style/css/emerald_forest.css"
   ]
 }
