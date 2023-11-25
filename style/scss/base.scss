@@ -1,7 +1,7 @@
 /*! @theme base */
 
 /*! @import 'default'; */
-@import '//fonts.googleapis.com/css?family=Roboto+Condensed|BIZ+UDPGothic&display=swap';
+@import '//fonts.googleapis.com/css?family=Roboto+Condensed|BIZ+UDPGothic|Zen+Maru+Gothic|Zen+Kaku+Gothic+New&display=swap';
 
 :root {
   --main-color: #607d8b;
@@ -37,6 +37,8 @@ section {
   width: 100dvh;
   height: 100dvh;
   padding: 0 40px;
+  font-family: 'Zen Kaku Gothic New', Arial, 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif;
   font-size: var(--main-font-size);
   font-weight: 400;
   color: var(--text-color);
@@ -503,5 +505,15 @@ section {
     footer {
       display: none;
     }
+  }
+
+  &.font-maru-gothic {
+    font-family: 'Zen Maru Gothic', Arial, 'Hiragino Kaku Gothic ProN',
+      'Hiragino Sans', Meiryo, sans-serif !important;
+  }
+
+  &.font-kaku-gothic {
+    font-family: 'Zen Kaku Gothic New', Arial, 'Hiragino Kaku Gothic ProN',
+      'Hiragino Sans', Meiryo, sans-serif !important;
   }
 }
