@@ -31,5 +31,6 @@
     "./style/css/twilight_blue.css",
     "./style/css/stormy_gray.css",
     "./style/css/emerald_forest.css"
-  ]
+  ],
+  "markdown.marp.enableHtml": true
 }
