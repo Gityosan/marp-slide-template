@@ -22,14 +22,14 @@
   --background-theme: var(--white);
   --background-code: #efefef;
   --background-code-border: #dcdcd5;
-  --h1-font-size: 50px;
-  --h2-font-size: 45px;
-  --h3-font-size: 40px;
-  --h4-font-size: 35px;
-  --h5-font-size: 28px;
-  --h6-font-size: 20px;
+  --h1-font-size: 72px;
+  --h2-font-size: 64px;
+  --h3-font-size: 56px;
+  --h4-font-size: 42px;
+  --h5-font-size: 36px;
+  --h6-font-size: 28px;
   --main-font-size: 20px;
-  --header-footer-font-size: 16px;
+  --header-footer-font-size: 20px;
   --normal-border-radius: 5px;
 }
 
@@ -319,6 +319,10 @@ section {
     .h-#{$i} {
       height: $i * 1% !important;
     }
+    &.gap-#{$i},
+    .gap-#{$i} {
+      gap: $i * 10px !important;
+    }
   }
 
   @for $i from 0 through 200 {
@@ -383,7 +387,7 @@ section {
 
     li {
       padding-left: 5px;
-      font-size: 24px;
+      font-size: var(--h5-font-size);
       line-height: 1.5;
       list-style-type: none;
 
@@ -394,10 +398,10 @@ section {
       }
 
       li {
-        font-size: 20px;
+        font-size: var(--h6-font-size);
 
         li {
-          font-size: 16px;
+          font-size: var(--main-font-size);
         }
       }
 
@@ -418,7 +422,7 @@ section {
         width: 100%;
         min-width: 450px;
         margin-bottom: 20px;
-        font-size: 24px;
+        font-size: var(--h5-font-size);
         content: '目次';
         border-bottom: 2px solid white;
       }
