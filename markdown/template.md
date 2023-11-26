@@ -42,11 +42,7 @@ _class: d-flex align-center justify-center index-section invert bg-main-color
 
 ###### Page1
 
-plain text
-
 ---
-
-# Page2
 
 > quote
 >
@@ -62,7 +58,7 @@ const aa = 0
 - list item
 
 1. list item
-1. list item
+2. list item
 
 ---
 
